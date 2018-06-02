@@ -2,18 +2,29 @@ import React, {Component} from 'react'
 
 class Body extends Component {
 
+	state = {
+		showOtherInfo: false
+	}
+
+	handleClick = () => {
+		this.setState({
+			showOtherInfo: !this.state.showOtherInfo
+		})
+	}
+
 	render() {
 	
 		const {contact} = this.props
-	 	const otherDate = <div className="description">{contact.email}</div>
+	 	const otherDate = this.state.showOtherInfo && <div className="description">{contact.email}</div>
 
 		return(
 
 			<div className="two column centered row">
 
 		    <div className="column">
-					<div className="mini ui buttons right floated">					 
-					  <button className="ui green basic button">Редактировать</button>
+					<div className="mini ui buttons right floated">
+						<button onClick={this.handleClick} className="ui blue basic button">{this.state.showOtherInfo ? 'Скрыть' : 'Подробнее'}</button>					 
+					  <button className="ui green basic button">Редактировать</button>					  
 					  <button className="ui red basic button">Удалить</button>
 					</div>
 				</div>
