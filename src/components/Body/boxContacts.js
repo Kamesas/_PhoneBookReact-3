@@ -25,5 +25,14 @@ export default [
 			email: "sergeyruc2014@gmail.com",
 			company: "Netflix",
 			foto: "https://www.cstatic-images.com/car-pictures/xl/USC50NIS022B021001_2.png"
+		},
+		{
+			id: 4,
+			firstName: "Николай",
+			name: "Куров",
+			numPhone: "3337234591",
+			email: "sjuraaaa2014@gmail.com",
+			company: "Netflix",
+			foto: "https://www.cstatic-images.com/car-pictures/xl/USC50NIS022B021001_2.png"
 		}
 ]

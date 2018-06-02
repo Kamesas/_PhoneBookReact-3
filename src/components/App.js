@@ -1,7 +1,6 @@
 import React from 'react'
 import '../semantic/semantic.min.css'
 import Header from './Header/Header'
-//import Body from './Body/Body'
 import BodyContactList from '../components/Body/BodyContactList'
 import boxContact from './Body/boxContacts'
 
