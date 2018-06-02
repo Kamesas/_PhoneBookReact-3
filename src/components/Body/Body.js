@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-function Body (props) {
+class Body extends Component {
+
+	render() {
 	
-	const {contact} = props
- 	const otherDate = <div className="description">{contact.email}</div>
+		const {contact} = this.props
+	 	const otherDate = <div className="description">{contact.email}</div>
 
-	return(
+		return(
 
 			<div className="two column centered row">
 
@@ -14,26 +16,25 @@ function Body (props) {
 					  <button className="ui green basic button">Редактировать</button>
 					  <button className="ui red basic button">Удалить</button>
 					</div>
+				</div>
 
 		    <div className="column">
 			    <div className="ui large animated list">
-						  <div className="item">
-						    <img className="ui avatar image" src="https://semantic-ui.com/images/avatar/large/christian.jpg" />
-						    <div className="content">
-						      <a className="header">{contact.firstName}</a>
-						      <div className="description">{contact.numPhone}</div>
-						      {otherDate}
-						      <hr />						      				      
-						    </div>
-						  </div>
-						</div>
-			    </div>
-		    </div>	
+					  <div className="item">
+					    <img className="ui avatar image" src="https://semantic-ui.com/images/avatar/large/christian.jpg" alt="alt" />
+					    <div className="content">
+					      <a className="header">{contact.firstName}</a>
+					      <div className="description">{contact.numPhone}</div>
+					      {otherDate}
+					      <hr />						      				      
+					    </div>
+					  </div>
+					</div>
+			  </div>
 
-		  </div>
+			</div>	
 
-
-    	/*<div className="ui one column centered grid">
+	  	/*<div className="ui one column centered grid">
 				<div className="two column centered row">
 
 			    <div className="column">
@@ -74,7 +75,10 @@ function Body (props) {
 		  	</div>			  
 			/div>*/
 
-    )
+	  )
+
+	}
+
 }
 
 export default Body 

@@ -10,7 +10,7 @@ export default [
     },
     {
 			id: 2,
-			firstName: "Ююлия",
+			firstName: "Юлия",
 			name: "Иванова",
 			numPhone: "0668852135",
 			email: "julia2014@gmail.com!",
