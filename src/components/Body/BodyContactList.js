@@ -1,5 +1,6 @@
 import React from 'react'
 import Body from './Body'
+import './body.css'
 
 export default function BodyContactList ({boxContact}) {
 
@@ -7,7 +8,7 @@ export default function BodyContactList ({boxContact}) {
 
 	return (
 
-		<ul>
+		<ul className="UlBodyContactList">
 			{contactElements}
 		</ul>
 

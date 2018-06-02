@@ -1,0 +1,10 @@
+.UlBodyContactList {
+	margin: 15px 0;
+	padding: 0;
+}
+
+.UlBodyContactList > li {
+	list-style-type: none;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
