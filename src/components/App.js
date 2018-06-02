@@ -1,8 +1,10 @@
 import React from 'react'
 import '../semantic/semantic.min.css'
 import Header from './Header/Header'
-import Body from './Body/Body'
+//import Body from './Body/Body'
+import BodyContactList from '../components/Body/BodyContactList'
 import boxContact from './Body/boxContacts'
+
 
 function App () {
 	return (
@@ -11,8 +13,8 @@ function App () {
 
 			  	<Header />					 
 
-			  	<Body contact={boxContact[0]} />				  	
-			  	<Body contact={boxContact[1]} />				  	
+			  	<BodyContactList boxContact={boxContact} />			  				  	
+			  		  				  	
 
 			  </div>		  
 			</div>
