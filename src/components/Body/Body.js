@@ -18,14 +18,7 @@ class Body extends Component {
 		var valueName = this.valueName.value;﻿
 		var valueNumPhone = this.valueNumPhone.value;﻿
 		var valueEmail = this.valueEmail.value;﻿
-		var valueCompany = this.valueCompany.value;﻿ 
-
-	
-    console.log(valueFirstName)   
-    console.log(valueName)    
-    console.log(valueNumPhone)
-    console.log(valueEmail)
-    console.log(valueCompany)
+		var valueCompany = this.valueCompany.value;﻿
 
     this.setState({
 			editContact: false		
@@ -39,7 +32,7 @@ class Body extends Component {
 	}
 
 	funcDelContact = () => {
-		console.log(1) 
+		this.props.del(this.props.index);
   };
 
 	render() {
