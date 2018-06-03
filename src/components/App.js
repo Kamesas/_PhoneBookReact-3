@@ -1,22 +1,26 @@
-import React from 'react'
+import React, {Component} from 'react'
 import '../semantic/semantic.min.css'
 import Header from './Header/Header'
 import BodyContactList from '../components/Body/BodyContactList'
 import boxContact from './Body/boxContacts'
 
 
-function App () {
-	return (
-			<div className="ui two column centered grid">
-			  <div className="column">
+class App extends Component {
+	render() {
 
-			  	<Header />					 
+		return (
+				<div className="ui two column centered grid">
+				  <div className="column">
 
-			  	<BodyContactList boxContact={boxContact} />		  		  				  	
+				  	<Header />					 
 
-			  </div>		  
-			</div>
+				  	<BodyContactList boxContact={boxContact} />		  		  				  	
+
+				  </div>		  
+				</div>
 		) 
+
+	}
 }
 
 export default App
