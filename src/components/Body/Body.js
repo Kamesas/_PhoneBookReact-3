@@ -18,12 +18,15 @@ class Body extends Component {
 		var valueName = this.valueName.value;﻿
 		var valueNumPhone = this.valueNumPhone.value;﻿
 		var valueEmail = this.valueEmail.value;﻿
-		var valueCompany = this.valueCompany.value;﻿
-    alert (valueFirstName);
-    alert (valueName);
-    alert (valueNumPhone);
-    alert (valueEmail);
-    alert (valueCompany);
+		var valueCompany = this.valueCompany.value;﻿ 
+
+		//valueFirstName = this.contact.firstName
+    console.log(valueFirstName)   
+    console.log(valueName)    
+    console.log(valueNumPhone)
+    console.log(valueEmail)
+    console.log(valueCompany)
+
     this.setState({
 			editContact: false		
 		})		
@@ -35,6 +38,13 @@ class Body extends Component {
 		})
 	}
 
+	funcDelContact = () => {
+		console.log(1)
+    // var arr = this.state.tasks;
+    // arr.splice (i, 1);
+    // this.setState ({tasks: arr});
+  };
+
 	render() {
 	
 		const {contact} = this.props
@@ -43,7 +53,7 @@ class Body extends Component {
 															<div className="mini ui buttons right floated">
 																<button onClick={this.funcShowOtherInfo} className="ui blue basic button">{this.state.showOtherInfo ? 'Скрыть' : 'Подробнее'}</button>					 
 															  <button onClick={this.funcEditContact}  className="ui green basic button">{this.state.editContact ? 'Сохранить' : 'Редактировать'}</button>															 				  
-															  <button className="ui red basic button">Удалить</button>
+															  <button onClick={this.funcDelContact} className="ui red basic button">Удалить</button>
 															</div>
 														</div>
 
@@ -67,7 +77,7 @@ class Body extends Component {
 											  </div>
 
 		const editScreen = <div className="column">
-											    <div className="ui large animated list">
+											    <div className="ui large list">
 													  <div className="item">
 													    <img className="ui avatar image" src={contact.foto} alt="alt" />
 													    <div className="content">
@@ -86,14 +96,10 @@ class Body extends Component {
 											  </div>
 
 		return(
-
 			<div className="two column centered row">
-
 		    {this.state.editContact ? saveScreenBtn : startScreenBtn }
-				{this.state.editContact ? editScreen : startScreen }		    
-
-			</div>	
-	  	
+				{this.state.editContact ? editScreen : startScreen }
+			</div>	  	
 	  )
 
 	}
