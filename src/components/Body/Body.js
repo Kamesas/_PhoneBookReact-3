@@ -20,7 +20,7 @@ class Body extends Component {
 		var valueEmail = this.valueEmail.value;﻿
 		var valueCompany = this.valueCompany.value;﻿ 
 
-		//valueFirstName = this.contact.firstName
+	
     console.log(valueFirstName)   
     console.log(valueName)    
     console.log(valueNumPhone)
@@ -39,10 +39,7 @@ class Body extends Component {
 	}
 
 	funcDelContact = () => {
-		console.log(1)
-    // var arr = this.state.tasks;
-    // arr.splice (i, 1);
-    // this.setState ({tasks: arr});
+		console.log(1) 
   };
 
 	render() {
