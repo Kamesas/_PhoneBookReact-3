@@ -15,7 +15,7 @@ class Body extends Component {
 	render() {
 	
 		const {contact} = this.props
-	 	const otherDate = this.state.showOtherInfo && <div className="description">{contact.email}</div>
+	 	const otherDate = this.state.showOtherInfo && <div className="description">{contact.email}<br/>{contact.company}</div>
 
 		return(
 
@@ -32,12 +32,11 @@ class Body extends Component {
 		    <div className="column">
 			    <div className="ui large animated list">
 					  <div className="item">
-					    <img className="ui avatar image" src="https://semantic-ui.com/images/avatar/large/christian.jpg" alt="alt" />
+					    <img className="ui avatar image" src={contact.foto} alt="alt" />
 					    <div className="content">
-					      <a className="header">{contact.firstName}</a>
+					      <a className="header">{contact.firstName} {contact.name}</a>
 					      <div className="description">{contact.numPhone}</div>
-					      {otherDate}
-					      <hr />						      				      
+					      {otherDate}					      					      				      
 					    </div>
 					  </div>
 					</div>
