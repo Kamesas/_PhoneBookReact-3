@@ -3,10 +3,17 @@ import React, {Component} from 'react'
 class Body extends Component {
 
 	state = {
-		showOtherInfo: false
+		showOtherInfo: false,
+		editContact: false
 	}
 
-	handleClick = () => {
+	funcEditContact = () => {
+		this.setState({
+			editContact: !this.state.editContact
+		})
+	}
+
+	funcShowOtherInfo = () => {
 		this.setState({
 			showOtherInfo: !this.state.showOtherInfo
 		})
@@ -23,8 +30,8 @@ class Body extends Component {
 
 		    <div className="column">
 					<div className="mini ui buttons right floated">
-						<button onClick={this.handleClick} className="ui blue basic button">{this.state.showOtherInfo ? 'Скрыть' : 'Подробнее'}</button>					 
-					  <button className="ui green basic button">Редактировать</button>					  
+						<button onClick={this.funcShowOtherInfo} className="ui blue basic button">{this.state.showOtherInfo ? 'Скрыть' : 'Подробнее'}</button>					 
+					  <button onClick={this.funcEditContact} className="ui green basic button">{this.state.editContact ? 'Сохранить' : 'Редактировать'}</button>					  
 					  <button className="ui red basic button">Удалить</button>
 					</div>
 				</div>
