@@ -9,8 +9,16 @@ class Body extends Component {
 
 	funcEditContact = () => {
 		this.setState({
-			editContact: !this.state.editContact
-		})
+			editContact: !this.state.editContact			
+		})		
+	}
+
+	funcSaveContact = () => {
+		var value = this.refs.newTxt.value;
+    alert (value);
+    this.setState({
+			editContact: false		
+		})		
 	}
 
 	funcShowOtherInfo = () => {
@@ -23,6 +31,20 @@ class Body extends Component {
 	
 		const {contact} = this.props
 	 	const otherDate = this.state.showOtherInfo && <div className="description">{contact.email}<br/>{contact.company}</div>
+	 	const startScreenBtn = <div className="column">
+															<div className="mini ui buttons right floated">
+																<button onClick={this.funcShowOtherInfo} className="ui blue basic button">{this.state.showOtherInfo ? 'Скрыть' : 'Подробнее'}</button>					 
+															  <button onClick={this.funcEditContact}  className="ui green basic button">{this.state.editContact ? 'Сохранить' : 'Редактировать'}</button>															 				  
+															  <button className="ui red basic button">Удалить</button>
+															</div>
+														</div>
+
+		const saveScreenBtn = <div className="column">
+														<div className="mini ui buttons right floated">															  
+														  <button onClick={this.funcSaveContact}  className="ui green basic button">Сохранить</button>														  
+														</div>
+													</div>
+
 	 	const startScreen = <div className="column">
 											    <div className="ui large animated list">
 													  <div className="item">
@@ -42,7 +64,7 @@ class Body extends Component {
 													    <img className="ui avatar image" src={contact.foto} alt="alt" />
 													    <div className="content">
 													      <a className="header">
-													      	<input type="text" defaultValue={contact.firstName} /><br/>
+													      	<input type="text" ref="newTxt" defaultValue={contact.firstName} /><br/>
 													       	<input type="text" defaultValue={contact.name} />
 													      </a>
 													      <div className="description"><input type="text" defaultValue={contact.numPhone} /></div>
@@ -59,14 +81,7 @@ class Body extends Component {
 
 			<div className="two column centered row">
 
-		    <div className="column">
-					<div className="mini ui buttons right floated">
-						<button onClick={this.funcShowOtherInfo} className="ui blue basic button">{this.state.showOtherInfo ? 'Скрыть' : 'Подробнее'}</button>					 
-					  <button onClick={this.funcEditContact} className="ui green basic button">{this.state.editContact ? 'Сохранить' : 'Редактировать'}</button>					  
-					  <button className="ui red basic button">Удалить</button>
-					</div>
-				</div>
-
+		    {this.state.editContact ? saveScreenBtn : startScreenBtn }
 				{this.state.editContact ? editScreen : startScreen }		    
 
 			</div>	
