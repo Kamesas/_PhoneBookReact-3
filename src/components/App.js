@@ -12,8 +12,7 @@ function App () {
 
 			  	<Header />					 
 
-			  	<BodyContactList boxContact={boxContact} />			  				  	
-			  		  				  	
+			  	<BodyContactList boxContact={boxContact} />		  		  				  	
 
 			  </div>		  
 			</div>

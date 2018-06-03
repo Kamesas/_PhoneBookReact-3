@@ -1,4 +1,6 @@
 import React from 'react';
+import Search from './Search'
+import AddContact from './AddContact'
 
 class Header extends React.Component {
 
@@ -12,8 +14,8 @@ class Header extends React.Component {
 					</div>
 
 				  <div className="two column centered row">
-				    <div className="column">Поиск</div>
-				    <div className="column">Добавить  контакт</div>
+				    <div className="column"><Search /></div>
+				    <div className="column"><AddContact /></div>
 				    <hr />
 				  </div>
 
