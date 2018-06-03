@@ -14,8 +14,16 @@ class Body extends Component {
 	}
 
 	funcSaveContact = () => {
-		var value = this.refs.newTxt.value;
-    alert (value);
+		var valueFirstName = this.valueFirstName.value;﻿
+		var valueName = this.valueName.value;﻿
+		var valueNumPhone = this.valueNumPhone.value;﻿
+		var valueEmail = this.valueEmail.value;﻿
+		var valueCompany = this.valueCompany.value;﻿
+    alert (valueFirstName);
+    alert (valueName);
+    alert (valueNumPhone);
+    alert (valueEmail);
+    alert (valueCompany);
     this.setState({
 			editContact: false		
 		})		
@@ -64,13 +72,13 @@ class Body extends Component {
 													    <img className="ui avatar image" src={contact.foto} alt="alt" />
 													    <div className="content">
 													      <a className="header">
-													      	<input type="text" ref="newTxt" defaultValue={contact.firstName} /><br/>
-													       	<input type="text" defaultValue={contact.name} />
+													      	<input type="text" ref={(input) => { this.valueFirstName = input; }} defaultValue={contact.firstName} /><br/>
+													       	<input type="text" ref={(input) => { this.valueName = input; }} defaultValue={contact.name} />
 													      </a>
-													      <div className="description"><input type="text" defaultValue={contact.numPhone} /></div>
+													      <div className="description"><input type="text" ref={(input) => { this.valueNumPhone = input; }} defaultValue={contact.numPhone} /></div>
 													      <div className="description">
-														      <input type="text" defaultValue={contact.email} /><br/>
-														      <input type="text" defaultValue={contact.company} />
+														      <input type="text" ref={(input) => { this.valueEmail = input; }} defaultValue={contact.email} /><br/>
+														      <input type="text" ref={(input) => { this.valueCompany = input; }} defaultValue={contact.company} />
 													      </div>				      					      				      
 													    </div>
 													  </div>
