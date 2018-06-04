@@ -14,29 +14,24 @@ export default class BodyContactList extends Component {
     this.setState ({stateBoxContact: arr});
   };
 	
-  // updateText = (text, i) => {
-  //   var arr = this.state.contactElements;
-  //   arr[i] = text;
-  //   this.setState ({contactElements: arr});
-  // };
+  updateText = (text, i) => {
+    var arr = this.state.stateBoxContact;
+    arr[i] = text;
+    this.setState ({stateBoxContact: arr});
+  };
 
 	render(){
 	
 		const contactElements = this.props.boxContact.map ((contact, index) => 					
 						<li key = {contact.id}  >
-							<Body index={index} contact={contact} update={this.updateText} del={this.deleteBlock} /><hr/>
+							<Body index={index} contact={contact} updateText={this.updateText} deleteBlock={this.deleteBlock} /><hr/>
 						</li>
 					)
 
-
-		return (			
-
+		return (
 			<ul className="UlBodyContactList">
-
-				{contactElements}	
-				
+				{contactElements}					
 			</ul>
-
 		)
 
 	}	

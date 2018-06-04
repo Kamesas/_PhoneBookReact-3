@@ -13,12 +13,17 @@ class Body extends Component {
 		})		
 	}
 
+	funcDelContact = () => {
+		this.props.deleteBlock(this.props.index);
+  };
+
 	funcSaveContact = () => {
-		// var valueFirstName = this.valueFirstName.value;﻿
+		//var valueFirstName = this.valueFirstName.value;﻿
 		// var valueName = this.valueName.value;﻿
 		// var valueNumPhone = this.valueNumPhone.value;﻿
 		// var valueEmail = this.valueEmail.value;﻿
 		// var valueCompany = this.valueCompany.value;﻿
+		this.props.updateText(this.valueFirstName.value, this.props.index);
 
     this.setState({
 			editContact: false		
@@ -29,11 +34,7 @@ class Body extends Component {
 		this.setState({
 			showOtherInfo: !this.state.showOtherInfo
 		})
-	}
-
-	funcDelContact = () => {
-		this.props.del(this.props.index);
-  };
+	}	
 
 	render() {
 	
