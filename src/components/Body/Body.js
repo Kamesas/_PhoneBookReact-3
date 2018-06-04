@@ -14,11 +14,11 @@ class Body extends Component {
 	}
 
 	funcSaveContact = () => {
-		var valueFirstName = this.valueFirstName.value;﻿
-		var valueName = this.valueName.value;﻿
-		var valueNumPhone = this.valueNumPhone.value;﻿
-		var valueEmail = this.valueEmail.value;﻿
-		var valueCompany = this.valueCompany.value;﻿
+		// var valueFirstName = this.valueFirstName.value;﻿
+		// var valueName = this.valueName.value;﻿
+		// var valueNumPhone = this.valueNumPhone.value;﻿
+		// var valueEmail = this.valueEmail.value;﻿
+		// var valueCompany = this.valueCompany.value;﻿
 
     this.setState({
 			editContact: false		
