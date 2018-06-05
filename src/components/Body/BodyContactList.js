@@ -13,6 +13,12 @@ export default class BodyContactList extends Component {
     arr.splice (i, 1);
     this.setState ({stateBoxContact: arr});
   };
+
+   add = (text) => {
+		var arr = this.state.stateBoxContact;
+		arr.push(text);
+		this.setState ({stateBoxContact: arr});
+  };
 	
   updateText = (text, i) => {
     var arr = this.state.stateBoxContact;
@@ -22,14 +28,15 @@ export default class BodyContactList extends Component {
 
 	render(){
 	
-		const contactElements = this.props.boxContact.map ((contact, index) => 					
-						<li key = {contact.id}  >
+		const contactElements = this.props.boxContact.map ((contact, index) => 									
+						<li key = {contact.id} index={index} >
 							<Body index={index} contact={contact} updateText={this.updateText} deleteBlock={this.deleteBlock} /><hr/>
 						</li>
 					)
 
-		return (
+		return (				
 			<ul className="UlBodyContactList">
+				<button onClick={this.add.bind(null, "Новый контакт")} >Добавить</button>
 				{contactElements}					
 			</ul>
 		)
